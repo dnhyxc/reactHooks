@@ -2,19 +2,13 @@ import React , {useState} from 'react'
 import TodoForm from './TodoForm'
 
 export default function TodoList() {
-
    const [todos,setTodos] = useState([])
-
    function setValue(text) {
-      if (text) {
-         setTodos([...todos,text])
-      }
-      console.log(text)
+      if (text) setTodos([...todos,text])
    }
-
    return (
       <div>
-         <TodoForm onSubmit={setValue} />
+         <TodoForm listOnSubmit={setValue} />
          <div>
             {
                todos.map((item,index) => {
